@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$main: #19292d;
+$secondary: #445053;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  min-height: 100vh;
+  .welcome {
+    display: grid;
+    padding: 3rem;
+    background-color: $main;
+    nav a {
+      color: $secondary;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      transition: all ease-in-out 300ms;
+      &:hover {
+        color: white;
+      }
+    }
+    h1 {
+      color: white;
+      font-size: 3rem;
+    }
+    p {
+      color: white;
+      font-size: 1.2rem;
+    }
+    footer {
+      align-self: end;
+      color: white;
+    }
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    img {
+      grid-auto-rows: span 2;
+    }
+    .text {
+      padding: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+  .photos {
+    .text {
+      font-size: 1.2rem;
+      padding: 2rem;
+      grid-auto-rows: span 1;
+    }
+    img {
+      grid-auto-rows: span 2;
+    }
+  }
+}
+
+// responsive
+@media screen and (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    .photos {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    display: block;
+    .photos {
+      display: block;
+    }
+  }
+}
